@@ -10,11 +10,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class FundamentosApplication implements CommandLineRunner {
 
-	private ComponentDependency componentDependency;
 	@Autowired
-	public FundamentosApplication(@Qualifier("componentTwoImplement") ComponentDependency componentDependency){
-		this.componentDependency = componentDependency;
-	}
+	@Qualifier("componentTwoImplement")
+	private ComponentDependency componentDependency;
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(FundamentosApplication.class, args);
